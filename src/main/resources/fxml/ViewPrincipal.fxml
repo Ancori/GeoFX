@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="view" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Wifi-icon.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="iptext" />
+            <Button fx:id="ipbutton" mnemonicParsing="false" onAction="#onipbutton" text="Check IP" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <TabPane side="BOTTOM" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Location">
+            <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="1.7976931348623157E308" vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints maxHeight="95.0" vgrow="NEVER" />
+                        <RowConstraints minHeight="0.0" vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                     </rowConstraints>
+                     <children>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Label text="LATITUDE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="latitudelabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox layoutX="20.0" layoutY="20.0" spacing="5.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label text="LONGITUDE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="longitudelabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <HBox prefHeight="33.0" prefWidth="148.0" spacing="5.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="TOP_LEFT" text="IP LOCATION">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="localitationlabel" alignment="CENTER" text="Label" />
+                              <ImageView fx:id="image" fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <VBox spacing="5.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="CITY, STATE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="citylabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="ZIP CODE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="codelabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox spacing="5.0" GridPane.rowIndex="3">
+                           <children>
+                              <Label text="LANGUAJE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lenguajelabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <Label text="TIME ZONE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="timezonelabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox spacing="5.0" GridPane.rowIndex="4">
+                           <children>
+                              <Label text="CALLING CODE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="calllabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <Label text="CURRENCY">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="currrencylabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                     </children>
+                  </GridPane>
+            </content>
+          </Tab>
+          <Tab text="Connection">
+            <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="625.0" minWidth="10.0" />
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                     </rowConstraints>
+                     <children>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Label text="IP ADDRESS">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="iplabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <HBox prefHeight="33.0" prefWidth="148.0" spacing="5.0" GridPane.rowIndex="1">
+                           <children>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/Globe-icon.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="TOP_LEFT" text="REGISTERED ISP">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="registeredIspLabel" alignment="CENTER" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" top="5.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <VBox spacing="5.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="TYPE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="typelabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="ASN">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="asnlabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox spacing="5.0" GridPane.rowIndex="3">
+                           <children>
+                              <Label text="HOSTNAME">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="hostnamelabel" text="Label" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                     </children>
+                  </GridPane>
+            </content>
+          </Tab>
+            <Tab text="Security">
+              <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints minHeight="10.0" vgrow="NEVER" />
+                        <RowConstraints minHeight="10.0" vgrow="NEVER" />
+                     </rowConstraints>
+                     <children>
+                        <HBox prefHeight="33.0" prefWidth="148.0" spacing="5.0">
+                           <children>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/Network-Shield-icon.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="TOP_LEFT" text="This IP is safe. No threats have been detected" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <VBox GridPane.rowIndex="1">
+                           <children>
+                              <Label text="PROXY DETECTED?">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="proxycheck" mnemonicParsing="false" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="TOR DETECTED?">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="torcheck" mnemonicParsing="false" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox GridPane.rowIndex="2">
+                           <children>
+                              <Label text="CRAWLER DETECTED?">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="crawlercheck" mnemonicParsing="false" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="THREAT LEVEL">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="low" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox spacing="5.0" GridPane.rowIndex="3">
+                           <children>
+                              <Label text="POTENTIAL THREAT TYPES">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="No threats have been deected for this IP address" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </VBox>
+                     </children>
+                  </GridPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
