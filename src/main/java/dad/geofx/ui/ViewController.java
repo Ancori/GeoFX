@@ -208,10 +208,10 @@ public class ViewController implements Initializable {
 		city.set(direccion.get().getCity());
 		code.set(direccion.get().getPostal());
 		lenguaje.set(direccion.get().getLanguages());
-		zonahoraria.set(direccion.get().getTimezone());
-		callcode.set(direccion.get().getCountry_calling_code());
-		currency.set(direccion.get().getCurrency()+" ("+direccion.get().getCurrency_name()+")");
-		type.set(direccion.get().getVersion());
+		zonahoraria.set(direccion.get().getTime_zone().getCode());
+		callcode.set(direccion.get().getLocation().getCalling_code());
+		currency.set(direccion.get().getCurrency().getName()+" ("+direccion.get().getCurrency().getCode()+")");
+		type.set(direccion.get().getType());
 		registered.set(direccion.get().getOrg());
 		asn.set(direccion.get().getAsn());
 		hostname.set(direccion.get().getHostname());

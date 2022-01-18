@@ -3,9 +3,8 @@ package dad.geofx.api;
 public class Asn {
 	
 	String asn;
-	String name;
+	String isp;
 	String domain;
-	String type;
 	public String getAsn() {
 		return asn;
 	}
@@ -13,10 +12,10 @@ public class Asn {
 		this.asn = asn;
 	}
 	public String getName() {
-		return name;
+		return isp;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.isp = name;
 	}
 	public String getDomain() {
 		return domain;
@@ -24,11 +23,12 @@ public class Asn {
 	public void setDomain(String domain) {
 		this.domain = domain;
 	}
-	public String getType() {
-		return type;
+	
+	public String getIsp() {
+		return isp;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setIsp(String isp) {
+		this.isp = isp;
 	}
 	@Override
 	public String toString() {

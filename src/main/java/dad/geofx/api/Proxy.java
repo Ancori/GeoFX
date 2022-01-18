@@ -2,37 +2,38 @@ package dad.geofx.api;
 
 public class Proxy {
 
-	String proxy;
-	String vpn;
-	String tor;
+	String is_proxy;
+	String is_crawler;
+	String is_tor;
+	
 
 	public String getProxy() {
-		return proxy;
+		return is_proxy;
 	}
 
 	public void setProxy(String proxy) {
-		this.proxy = proxy;
+		this.is_proxy = proxy;
 	}
 
 	public String getVpn() {
-		return vpn;
+		return is_crawler;
 	}
 
 	public void setVpn(String vpn) {
-		this.vpn = vpn;
+		this.is_crawler = vpn;
 	}
 
 	public String getTor() {
-		return tor;
+		return is_tor;
 	}
 
 	public void setTor(String tor) {
-		this.tor = tor;
+		this.is_tor = tor;
 	}
 
 	@Override
 	public String toString() {
-		return "Proxy [proxy=" + proxy + ", vpn=" + vpn + ", tor=" + tor + "]";
+		return "Proxy [proxy=" + is_proxy + ", vpn=" + is_crawler + ", tor=" + is_tor + "]";
 	}
 
 	

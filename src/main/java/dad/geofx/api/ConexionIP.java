@@ -2,26 +2,20 @@ package dad.geofx.api;
 
 public class ConexionIP {
 
-	Asn as;
-	String isp;
-    Proxy proxy;
+	Asn connection;
+    Proxy security;
 	public Asn getAs() {
-		return as;
+		return connection;
 	}
 	public void setAs(Asn as) {
-		this.as = as;
+		this.connection = as;
 	}
-	public String getIsp() {
-		return isp;
-	}
-	public void setIsp(String isp) {
-		this.isp = isp;
-	}
+	
 	public Proxy getProxy() {
-		return proxy;
+		return security;
 	}
 	public void setProxy(Proxy proxy) {
-		this.proxy = proxy;
+		this.security = proxy;
 	}
 	
 

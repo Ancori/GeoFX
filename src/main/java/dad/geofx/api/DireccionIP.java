@@ -8,20 +8,20 @@ public class DireccionIP {
 	private String country_name;
 	private String country_code;
 	private String city;
-	private String region;
-	private String postal;
+	private String region_name;
+	private String zip;
 	private String languages;
-	private String timezone;
-	private String country_calling_code;
-	private String currency_name;
-	private String currency;
+	private Timezone time_zone;
+    private Currency currency;
 	private String org;
 	private String version;
 	private String asn;
 	private String hostname;
+	private String type;
 	private boolean proxybooelan;
 	private boolean torbooelan;
 	private boolean vpnbooelan;
+	private Location location;
 	
 
 	public String getIp() {
@@ -73,19 +73,19 @@ public class DireccionIP {
 	}
 
 	public String getRegion() {
-		return region;
+		return region_name;
 	}
 
 	public void setRegion(String region) {
-		this.region = region;
+		this.region_name = region;
 	}
 
 	public String getPostal() {
-		return postal;
+		return zip;
 	}
 
 	public void setPostal(String postal) {
-		this.postal = postal;
+		this.zip = postal;
 	}
 
 	public String getLanguages() {
@@ -95,39 +95,6 @@ public class DireccionIP {
 	public void setLanguages(String languages) {
 		this.languages = languages;
 	}
-
-	public String getTimezone() {
-		return timezone;
-	}
-
-	public void setTimezone(String timezone) {
-		this.timezone = timezone;
-	}
-
-	public String getCountry_calling_code() {
-		return country_calling_code;
-	}
-
-	public void setCountry_calling_code(String country_calling_code) {
-		this.country_calling_code = country_calling_code;
-	}
-
-	public String getCurrency_name() {
-		return currency_name;
-	}
-
-	public void setCurrency_name(String currency_name) {
-		this.currency_name = currency_name;
-	}
-
-	public String getCurrency() {
-		return currency;
-	}
-
-	public void setCurrency(String currency) {
-		this.currency = currency;
-	}
-
 	public String getOrg() {
 		return org;
 	}
@@ -182,6 +149,38 @@ public class DireccionIP {
 
 	public void setVpnbooelan(boolean vpnbooelan) {
 		this.vpnbooelan = vpnbooelan;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Timezone getTime_zone() {
+		return time_zone;
+	}
+
+	public void setTime_zone(Timezone time_zone) {
+		this.time_zone = time_zone;
+	}
+
+	public Currency getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(Currency currency) {
+		this.currency = currency;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 	
 

@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-
 import com.google.gson.Gson;
 
 public class GeoApiService {
@@ -13,41 +12,31 @@ public class GeoApiService {
 	public DireccionIP obtener(String ip) {
 		DireccionIP obj = new DireccionIP();
 		ConexionIP obj2 = new ConexionIP();
-
+		
 		try {
 			String json = "";
-			URL ipapi = new URL("https://ipapi.co/" + ip + "/json/");
+			URL ipapi = new URL( "https://ipapi.com/ip_api.php?ip="+ ip );
 			URLConnection c = ipapi.openConnection();
 			c.setRequestProperty("User-Agent", "java-ipapi-v1.02");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(c.getInputStream()));
-
 			String line;
 			while ((line = reader.readLine()) != null) {
 				json += line;
 			}
 			reader.close();
 			obj = new Gson().fromJson(json, DireccionIP.class);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		String url2 = "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_1kZZC1tcH2d0Aqcvxm03jrVGADYMy&ipAddress="
-				+ ip;
-		String json = "";
-		try (java.util.Scanner s = new java.util.Scanner(new java.net.URL(url2).openStream())) {
-			json += s.useDelimiter("\\A").next();
 			obj2 = new Gson().fromJson(json, ConexionIP.class);
 			obj.setAsn(obj2.getAs().getAsn());
-			obj.setHostname(obj2.getIsp());
+			obj.setOrg(obj2.getAs().getIsp());
+			obj.setLanguages(obj.getLocation().getLanguages().get(0).getName()+"("+obj.getLocation().getLanguages().get(0).getCode()+")");
 			boolean[] vector = comprobarProxy(obj2.getProxy().getProxy(), obj2.getProxy().getTor(),
 					obj2.getProxy().getVpn());
 			obj.setProxybooelan(vector[0]);
 			obj.setTorbooelan(vector[1]);
 			obj.setVpnbooelan(vector[2]);
-
-		} catch (Exception ex) {
-			ex.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return obj;
 
